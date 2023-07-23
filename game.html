@@ -1,0 +1,50 @@
+!DOCTYPE html>
+<html>
+<head>
+    <title>My MMORPG Game</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/3.55.2/phaser.min.js"></script>
+</head>
+<body>
+    <script>
+        const config = {
+            type: Phaser.AUTO,
+            width: 800,
+            height: 600,
+            scene: {
+                preload: preload,
+                create: create,
+                update: update
+            }
+        };
+
+        const game = new Phaser.Game(config);
+
+        function preload() {
+            // Preload assets (sprites, images, etc.)
+        }
+
+        function create() {
+            // Create game objects (player, enemies, etc.)
+        }
+
+        function update() {
+            // Update game logic (e.g., player movement, collision detection)
+        }
+
+        // Implement WebSocket for real-time communication with server
+        const socket = new WebSocket('ws://your-server-address');
+
+        socket.onopen = function() {
+            console.log('WebSocket connection opened.');
+        };
+
+        socket.onmessage = function(event) {
+            // Handle messages from the server (e.g., player position updates)
+        };
+
+        socket.onclose = function(event) {
+            console.log('WebSocket connection closed.');
+        };
+    </script>
+</body>
+</html>
